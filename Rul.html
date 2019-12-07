@@ -1,0 +1,488 @@
+<html>
+<head>
+	<title>Roulette</title>
+	<style>
+		@media screen and (max-width: 1600px) {
+			html {
+				overflow-y: scroll;
+			}
+
+			body {
+				background-image: url(IMG/Rul/Main.png);
+				background-size: 100%;
+				background-repeat: repeat-y;
+			}
+
+			#rul {
+				width: 90%;
+				height: 607.2px;
+				background-image: url(IMG/Rul/Rul.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 5%;
+				top: 0%;
+			}
+
+			#arrow {
+				width: 5%;
+				height: 7%;
+				background-image: url(IMG/Rul/ArrowGold.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 47.5%;
+				top: 15%;
+			}
+
+			#rulBack {
+				width: 44%;
+				height: 619.65px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 28%;
+				top: 11%;
+			}
+
+			#exit {
+				width: 14%;
+				height: 109.35px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 3%;
+				top: 8%;
+			}
+
+			#exitText {
+				width: 100%;
+				height: 100%;
+				background-image: url(IMG/Rul/Exit.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+
+			#score {
+				width: 23%;
+				height: 109.35px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 74%;
+				top: 8%;
+			}
+
+			#scoreText {
+				width: 40%;
+				height: 100%;
+				background-image: url(IMG/Rul/Score.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				top: 20%;
+			}
+
+			#scoreNumb {
+				width: 50%;
+				height: 60%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				text-align: center;
+				color: rgba(30, 114, 216, 0.66);
+				font-size: 20px;
+				font-family: "Monotype Corsiva";
+				position: absolute;
+				left: 40%;
+				top: 20%;
+			}
+
+			#moneyBack {
+				width: 23%;
+				height: 481.14px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 3%;
+				top: 30%;
+			}
+
+			#moneyNumb {
+				width: 96%;
+				height: 35%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 2%;
+				top: 1%;
+			}
+
+			#bet {
+				width: 50%;
+				height: 100%;
+				background-image: url(IMG/Rul/Bet.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 25%;
+				top: -2%;
+			}
+
+			#moneyX2 {
+				width: 96%;
+				height: 15%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 2%;
+				top: 50%;
+			}
+
+			#X2 {
+				width: 50%;
+				height: 100%;
+				background-image: url(IMG/Rul/X2.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 25%;
+				top: -2%;
+			}
+
+			#moneyX5 {
+				width: 96%;
+				height: 15%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 2%;
+				top: 67%;
+			}
+
+			#X5 {
+				width: 50%;
+				height: 100%;
+				background-image: url(IMG/Rul/X5.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 25%;
+				top: -2%;
+			}
+
+			#moneyX50 {
+				width: 96%;
+				height: 15%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 2%;
+				top: 84%;
+			}
+
+			#X50 {
+				width: 50%;
+				height: 100%;
+				background-image: url(IMG/Rul/X50.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 25%;
+				top: -2%;
+			}
+
+			#text {
+				width: 90%;
+				height: 50%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				text-align: center;
+				color: rgba(30, 114, 216, 0.66);
+				font-size: 25px;
+				font-family: "Monotype Corsiva";
+				position: absolute;
+				left: 5%;
+				top: 37%;
+			}
+
+			#block {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0%;
+				top: 0%;
+				z-index: 1;
+				display: none;
+			}
+		}
+		@media screen and (max-width: 640px) {
+
+			#moneyBack {
+				width: 94%;
+				height: 481.14px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 3%;
+				top: 300px;
+			}
+
+			#bet {
+				width: 20%;
+				height: 100%;
+				background-image: url(IMG/Rul/Bet.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 40%;
+				top: -2%;
+			}
+
+			#X2 {
+				width: 20%;
+				height: 100%;
+				background-image: url(IMG/Rul/X2.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 40%;
+				top: -2%;
+			}
+
+			#X5 {
+				width: 20%;
+				height: 100%;
+				background-image: url(IMG/Rul/X5.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 40%;
+				top: -2%;
+			}
+
+			#X50 {
+				width: 20%;
+				height: 100%;
+				background-image: url(IMG/Rul/X50.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 40%;
+				top: -2%;
+			}
+
+			#exit {
+				width: 22%;
+				height: 50px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 3%;
+				top: 8%;
+			}
+
+			#exitText {
+				width: 100%;
+				height: 100%;
+				background-image: url(IMG/Rul/Exit.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: 0%;
+				top: 20%;
+			}
+
+			#score {
+				width: 22%;
+				height: 50px;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				position: absolute;
+				left: 74%;
+				top: 8%;
+			}
+
+			#scoreText {
+				width: 40%;
+				height: 100%;
+				background-image: url(IMG/Rul/Score.png);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				position: absolute;
+				top: 35%;
+			}
+
+			#text {
+				font-size: 15px;
+			}
+
+			#scoreNumb {
+				width: 50%;
+				height: 60%;
+				background-color: rgba(10, 10, 10, 0.26);
+				border-radius: 15px;
+				text-align: center;
+				color: rgba(30, 114, 216, 0.66);
+				font-size: 10px;
+				font-family: "Monotype Corsiva";
+				position: absolute;
+				left: 40%;
+				top: 20%;
+			}
+
+		}
+	</style>
+	<script>
+		function Exit() {
+			document.location.href = "Main.html";
+		}
+		function ExitOver() {
+			var x = document.getElementById("exit");
+			x.style.backgroundColor = "rgba(255, 31, 31, 0.20)";
+		}
+		function ExitOut() {
+			var x = document.getElementById("exit");
+			x.style.backgroundColor = "rgba(10, 10, 10, 0.26)";
+		}
+		function OverX2() {
+			var x = document.getElementById("moneyX2");
+			x.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+		}
+		function OutX2() {
+			var x = document.getElementById("moneyX2");
+			x.style.backgroundColor = "rgba(10, 10, 10, 0.26)";
+		}
+		function OverX5() {
+			var x = document.getElementById("moneyX5");
+			x.style.backgroundColor = "rgba(0, 0, 255, 0.5)";
+		}
+		function OutX5() {
+			var x = document.getElementById("moneyX5");
+			x.style.backgroundColor = "rgba(10, 10, 10, 0.26)";
+		}
+		function OverX50() {
+			var x = document.getElementById("moneyX50");
+			x.style.backgroundColor = "rgba(255, 255, 0, 0.5)";
+		}
+		function OutX50() {
+			var x = document.getElementById("moneyX50");
+			x.style.backgroundColor = "rgba(10, 10, 10, 0.26)";
+		}
+		function Game(x) {
+			var ar = document.getElementById("arrow");
+			var rul = document.getElementById("rul");
+			var bet = document.getElementById("text");
+			var score = document.getElementById("scoreNumb");
+			var block = document.getElementById("block");
+			var h1 = document.getElementById("h1");
+			var h2 = document.getElementById("h2");
+			var h3 = document.getElementById("h3");
+			var h4 = document.getElementById("h4");
+			var h5 = document.getElementById("h5");
+			var res;
+			var maxTime = Math.floor(Math.random() * (2501) + 500);
+			var time = 0;
+			var tmp = 0;
+			if (Number(bet.value) > 0) {
+				if (Number(score.value) - Number(bet.value) >= 0) {
+					score.value = Number(score.value) - Number(bet.value);
+					var Timer = setInterval(function () {
+						rul.style.transform = "rotate(" + time + "deg)";
+						block.style.display = "block";
+						if (time > 350 * (tmp + 1) && time < 370 * (tmp + 1)) tmp++;
+						if (time > -3.5 + (360 * tmp) && time < 3.5 + (360 * tmp)) ar.style.backgroundImage = "url(IMG/Rul/ArrowGold.png)";
+						else if ((time > 36.5 + (360 * tmp) && time < 43.5 + (360 * tmp)) || (time > 76.5 + (360 * tmp) && time < 83.5 + (360 * tmp)) || (time > 116.5 + (360 * tmp) && time < 123.5 + (360 * tmp)) || (time > 156.5 + (360 * tmp) && time < 163.5 + (360 * tmp)) || (time > 196.5 + (360 * tmp) && time < 203.5 + (360 * tmp)) || (time > 236.5 + (360 * tmp) && time < 243.5 + (360 * tmp)) || (time > 276.5 + (360 * tmp) && time < 283.5 + (360 * tmp)) || (time > 316.5 + (360 * tmp) && time < 323.5 + (360 * tmp))) ar.style.backgroundImage = "url(IMG/Rul/ArrowBlue.png)";
+						else ar.style.backgroundImage = "url(IMG/Rul/ArrowBlack.png)";
+						if (time < maxTime / 2) time += 6.666;
+						else if (time < maxTime - 100) time += 3.333;
+						else time += 1;
+						if (time > maxTime) {
+							if (time > -3.5 + (360 * tmp) && time < 3.5 + (360 * tmp) && x == 50) res = bet.value * x;
+							else if (((time > 36.5 + (360 * tmp) && time < 43.5 + (360 * tmp)) || (time > 76.5 + (360 * tmp) && time < 83.5 + (360 * tmp)) || (time > 116.5 + (360 * tmp) && time < 123.5 + (360 * tmp)) || (time > 156.5 + (360 * tmp) && time < 163.5 + (360 * tmp)) || (time > 196.5 + (360 * tmp) && time < 203.5 + (360 * tmp)) || (time > 236.5 + (360 * tmp) && time < 243.5 + (360 * tmp)) || (time > 276.5 + (360 * tmp) && time < 283.5 + (360 * tmp)) || (time > 316.5 + (360 * tmp) && time < 323.5 + (360 * tmp))) && x == 5) res = bet.value * x;
+							else if (((time > 3.5 + (360 * tmp) && time < 36.5 + (360 * tmp)) || (time > 43.5 + (360 * tmp) && time < 76.5 + (360 * tmp)) || (time > 83.5 + (360 * tmp) && time < 116.5 + (360 * tmp)) || (time > 123.5 + (360 * tmp) && time < 156.5 + (360 * tmp)) || (time > 163.5 + (360 * tmp) && time < 196.5 + (360 * tmp)) || (time > 203.5 + (360 * tmp) && time < 236.5 + (360 * tmp)) || (time > 243.5 + (360 * tmp) && time < 276.5 + (360 * tmp)) || (time > 283.5 + (360 * tmp) && time < 316.5 + (360 * tmp))) && x == 2) res = bet.value * x;
+							else res = 0;
+							score.value = Number(score.value) + res;
+							block.style.display = "none";
+							clearInterval(Timer);
+						}
+					});
+				}
+				else alert("Недостаточно очков!");
+			}
+			else alert("Неверные данные!");
+		}
+		function Adapt() {
+			var T = setInterval(function () {
+				var rul = document.getElementById("rul");
+				var rulBack = document.getElementById("rulBack");
+				var ex = document.getElementById("exit");
+				var score = document.getElementById("score");
+				var bet = document.getElementById("moneyBack");
+				var bl = document.getElementById("block");
+				if (document.documentElement.clientWidth > 640) {
+					var rulY = document.documentElement.clientWidth * 0.44 * 0.9 * 0.998;
+					var rulBackY = document.documentElement.clientWidth * 0.44 * 0.916;
+					var exY = document.documentElement.clientWidth * 0.14 * 0.508;
+					var scoreY = document.documentElement.clientWidth * 0.23 * 0.309;
+					var betY = document.documentElement.clientWidth * 0.23 * 1.361;
+					rul.style.height = rulY + "px";
+					rulBack.style.height = rulBackY + "px";
+					rulBack.style.top = 11 + "%";
+					ex.style.height = exY + "px";
+					ex.style.top = 8 + "%";
+					score.style.height = scoreY + "px";
+					score.style.top = 8 + "%";
+					bet.style.height = betY + "px";
+					bet.style.top = 30 + "%";
+				}
+				else {
+					var rulY = document.documentElement.clientWidth * 0.44 * 0.9 * 0.998;
+					var rulBackY = document.documentElement.clientWidth * 0.44 * 0.916;
+					var exY = document.documentElement.clientWidth * 0.22 * 0.7;
+					var scoreY = document.documentElement.clientWidth * 0.23 * 0.309;
+					var betY = document.documentElement.clientWidth * 0.94 * 0.554;
+					rul.style.height = rulY + "px";
+					rulBack.style.height = rulBackY + "px";
+					rulBack.style.top = document.documentElement.clientWidth * 0.11;
+					ex.style.height = exY + "px";
+					ex.style.top = document.documentElement.clientWidth * 0.08;
+					score.style.height = exY + "px";
+					score.style.top = document.documentElement.clientWidth * 0.08;
+					bet.style.height = betY + "px";
+					bet.style.top = document.documentElement.clientWidth * 0.52;
+					bl.style.height = (document.documentElement.clientWidth * 0.52 + betY) + "px";
+				}
+			})
+		}
+	</script>
+</head>
+<body onload="Adapt()">
+	<div id="block"></div>
+	<div id="exit" onclick="Exit()" onmouseover="ExitOver()" onmouseout="ExitOut()">
+		<div id="exitText"></div>
+	</div>
+	<div id="score">
+		<div id="scoreText"></div>
+		<input id="scoreNumb" type="text" value="100" disabled />
+	</div>
+	<div id="rulBack">
+		<div id="rul"></div>
+		<div id="arrow"></div>
+	</div>
+	<div id="moneyBack">
+		<div id="moneyNumb">
+			<div id="bet"></div>
+			<input id="text" type="text" value="0" />
+		</div>
+		<div id="moneyX2" onmouseover="OverX2()" onmouseout="OutX2()" onclick="Game(2)">
+			<div id="X2"></div>
+		</div>
+		<div id="moneyX5" onmouseover="OverX5()" onmouseout="OutX5()" onclick="Game(5)">
+			<div id="X5"></div>
+		</div>
+		<div id="moneyX50" onmouseover="OverX50()" onmouseout="OutX50()" onclick="Game(50)">
+			<div id="X50"></div>
+		</div>
+	</div>
+</body>
+</html>
